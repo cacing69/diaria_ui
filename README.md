@@ -23,4 +23,4 @@ Finance Mobile App Deisgn Clean and Mordern
 
   Scrren | Pictures
  --- | ---
- [Home]("/lib/app/paynex/paynex_home.dart") | <img src="screens/app/paynex/home.png" height= "800"/>
+ [Home](lib/app/paynex/paynex_home.dart) | <img src="screens/app/paynex/home.png" height= "800"/>
