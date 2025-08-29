@@ -271,8 +271,12 @@ class _PayhexHomeState extends State<PayhexHome> {
                                     ),
                                   ),
                                 ),
-
-                                Text("|"),
+                                SizedBox(
+                                  height: 30,
+                                  child: VerticalDivider(
+                                    color: Color(0xff154617),
+                                  ),
+                                ),
                                 Material(
                                   color: Colors.transparent,
                                   child: InkWell(
@@ -299,7 +303,12 @@ class _PayhexHomeState extends State<PayhexHome> {
                                     ),
                                   ),
                                 ),
-                                Text("|"),
+                                SizedBox(
+                                  height: 30,
+                                  child: VerticalDivider(
+                                    color: Color(0xff154617),
+                                  ),
+                                ),
                                 Material(
                                   color: Colors.transparent,
                                   child: InkWell(
