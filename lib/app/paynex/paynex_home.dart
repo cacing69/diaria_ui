@@ -17,12 +17,11 @@ class _PayhexHomeState extends State<PayhexHome> {
   Widget getNavBar() {
     return SafeArea(
       child: Align(
-        alignment: Alignment.bottomCenter, // membuat horizontal tetap di tengah
+        alignment: Alignment.bottomCenter,
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 10), // jarak dari bawah layar
+          padding: const EdgeInsets.only(bottom: 10),
           child: Container(
             height: 80,
-            // width tidak diatur → mengikuti lebar child
             decoration: BoxDecoration(
               color: Color(0xffEEFFDD),
               borderRadius: BorderRadius.circular(60),
@@ -33,105 +32,121 @@ class _PayhexHomeState extends State<PayhexHome> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    _selectedMenu.value = 0;
-                  },
-                  child: SizedBox(
-                    height: 60,
-                    width: 60, // lebar konten
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: _selectedMenu.value == 0
-                            ? Color(0xffB2EB73)
-                            : Color(0xffEEFFDD),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: Icon(
-                          Icons.home_filled,
-                          size: 30,
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(60),
+                    onTap: () {
+                      _selectedMenu.value = 0;
+                    },
+                    child: SizedBox(
+                      height: 60,
+                      width: 60, // lebar konten
+                      child: Container(
+                        decoration: BoxDecoration(
                           color: _selectedMenu.value == 0
-                              ? Color(0xff154617)
-                              : Color(0xff8B8F87),
+                              ? Color(0xffB2EB73)
+                              : Colors.transparent,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.home_filled,
+                            size: 30,
+                            color: _selectedMenu.value == 0
+                                ? Color(0xff154617)
+                                : Color(0xff8B8F87),
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    _selectedMenu.value = 1;
-                  },
-                  child: SizedBox(
-                    height: 60,
-                    width: 60, // lebar konten
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: _selectedMenu.value == 1
-                            ? Color(0xffB2EB73)
-                            : Color(0xffEEFFDD),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: Icon(
-                          Icons.insert_chart_outlined_rounded,
-                          size: 30,
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(60),
+                    onTap: () {
+                      _selectedMenu.value = 1;
+                    },
+                    child: SizedBox(
+                      height: 60,
+                      width: 60, // lebar konten
+                      child: Container(
+                        decoration: BoxDecoration(
                           color: _selectedMenu.value == 1
-                              ? Color(0xff154617)
-                              : Color(0xff8B8F87),
+                              ? Color(0xffB2EB73)
+                              : Colors.transparent,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.insert_chart_outlined_rounded,
+                            size: 30,
+                            color: _selectedMenu.value == 1
+                                ? Color(0xff154617)
+                                : Color(0xff8B8F87),
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    _selectedMenu.value = 2;
-                  },
-                  child: SizedBox(
-                    height: 60,
-                    width: 60, // lebar konten
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: _selectedMenu.value == 2
-                            ? Color(0xffB2EB73)
-                            : Color(0xffEEFFDD),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: Icon(
-                          Icons.wallet_rounded,
-                          size: 30,
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(60),
+                    onTap: () {
+                      _selectedMenu.value = 2;
+                    },
+                    child: SizedBox(
+                      height: 60,
+                      width: 60, // lebar konten
+                      child: Container(
+                        decoration: BoxDecoration(
                           color: _selectedMenu.value == 2
-                              ? Color(0xff154617)
-                              : Color(0xff8B8F87),
+                              ? Color(0xffB2EB73)
+                              : Colors.transparent,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.wallet_rounded,
+                            size: 30,
+                            color: _selectedMenu.value == 2
+                                ? Color(0xff154617)
+                                : Color(0xff8B8F87),
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    _selectedMenu.value = 3;
-                  },
-                  child: SizedBox(
-                    height: 60,
-                    width: 60, // lebar konten
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: _selectedMenu.value == 3
-                            ? Color(0xffB2EB73)
-                            : Color(0xffEEFFDD),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: Icon(
-                          Icons.person_2_outlined,
-                          size: 30,
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(60),
+                    onTap: () {
+                      _selectedMenu.value = 3;
+                    },
+                    child: SizedBox(
+                      height: 60,
+                      width: 60, // lebar konten
+                      child: Container(
+                        decoration: BoxDecoration(
                           color: _selectedMenu.value == 3
-                              ? Color(0xff154617)
-                              : Color(0xff8B8F87),
+                              ? Color(0xffB2EB73)
+                              : Colors.transparent,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.person_2_outlined,
+                            size: 30,
+                            color: _selectedMenu.value == 3
+                                ? Color(0xff154617)
+                                : Color(0xff8B8F87),
+                          ),
                         ),
                       ),
                     ),
@@ -223,62 +238,93 @@ class _PayhexHomeState extends State<PayhexHome> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute<void>(
-                                        builder: (context) => PaynexSend(),
-                                      ),
-                                    );
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Icon(
-                                        Icons.arrow_circle_up_rounded,
-                                        size: 40,
-                                        color: Color(0xff154617),
-                                      ),
-                                      Text(
-                                        "Send",
-                                        style: TextStyle(
-                                          color: Color(0xff154617),
+                                Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    borderRadius: BorderRadius.circular(60),
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => PaynexSend(),
                                         ),
+                                      );
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            Icons.arrow_circle_down_rounded,
+                                            size: 40,
+                                            color: Color(0xff154617),
+                                          ),
+                                          Text(
+                                            "Send",
+                                            style: TextStyle(
+                                              color: Color(0xff154617),
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
+                                    ),
+                                  ),
+                                ),
+
+                                Text("|"),
+                                Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    borderRadius: BorderRadius.circular(60),
+                                    onTap: () {},
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            Icons.arrow_circle_up_rounded,
+                                            size: 40,
+                                            color: Color(0xff154617),
+                                          ),
+                                          Text(
+                                            "Send",
+                                            style: TextStyle(
+                                              color: Color(0xff154617),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 Text("|"),
-                                Column(
-                                  children: [
-                                    Icon(
-                                      Icons.arrow_circle_down_rounded,
-                                      size: 40,
-                                      color: Color(0xff154617),
-                                    ),
-                                    Text(
-                                      "Request",
-                                      style: TextStyle(
-                                        color: Color(0xff154617),
+                                Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    borderRadius: BorderRadius.circular(60),
+                                    onTap: () {},
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            Icons.account_balance,
+                                            size: 40,
+                                            color: Color(0xff154617),
+                                          ),
+                                          Text(
+                                            "Bank",
+                                            style: TextStyle(
+                                              color: Color(0xff154617),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ],
-                                ),
-                                Text("|"),
-                                Column(
-                                  children: [
-                                    Icon(
-                                      Icons.account_balance,
-                                      color: Color(0xff154617),
-                                      size: 40,
-                                    ),
-                                    Text(
-                                      "Bank",
-                                      style: TextStyle(
-                                        color: Color(0xff154617),
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
                               ],
                             ),
