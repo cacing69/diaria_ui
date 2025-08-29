@@ -1,3 +1,4 @@
+import 'package:diaria_ui/app/paynex/paynex_send.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -33,7 +34,10 @@ class _PayhexHomeState extends State<PayhexHome> {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text("ibnuul@gmail.com"),
-                    trailing: Icon(Icons.notifications_none),
+                    trailing: Icon(
+                      Icons.notifications_none,
+                      color: Color(0xff154617),
+                    ),
                   ),
                   // Gap(10),
                   Padding(
@@ -57,7 +61,7 @@ class _PayhexHomeState extends State<PayhexHome> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                "\$520.421.",
+                                "\$520,421.",
                                 style: Theme.of(context).textTheme.displaySmall!
                                     .copyWith(
                                       fontWeight: FontWeight.bold,
@@ -90,20 +94,30 @@ class _PayhexHomeState extends State<PayhexHome> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
-                                  Column(
-                                    children: [
-                                      Icon(
-                                        Icons.arrow_circle_up_rounded,
-                                        size: 40,
-                                        color: Color(0xff154617),
-                                      ),
-                                      Text(
-                                        "Send",
-                                        style: TextStyle(
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute<void>(
+                                          builder: (context) => PaynexSend(),
+                                        ),
+                                      );
+                                    },
+                                    child: Column(
+                                      children: [
+                                        Icon(
+                                          Icons.arrow_circle_up_rounded,
+                                          size: 40,
                                           color: Color(0xff154617),
                                         ),
-                                      ),
-                                    ],
+                                        Text(
+                                          "Send",
+                                          style: TextStyle(
+                                            color: Color(0xff154617),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                   Text("|"),
                                   Column(
