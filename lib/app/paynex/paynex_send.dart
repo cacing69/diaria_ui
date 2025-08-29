@@ -21,27 +21,33 @@ class _PaynexSendState extends State<PaynexSend> {
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   children: [
-                    GestureDetector(
-                      child: SizedBox(
-                        width: 45,
-                        height: 45,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xffC8F29A),
+                    Material(
+                      borderRadius: BorderRadius.circular(45),
+                      color: Color(0xffC8F29A),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(45),
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: SizedBox(
+                          width: 45,
+                          height: 45,
+                          child: Container(
+                            decoration: BoxDecoration(shape: BoxShape.circle),
+                            child: Center(child: Icon(Icons.chevron_left)),
                           ),
-                          child: Center(child: Icon(Icons.chevron_left)),
                         ),
                       ),
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
                     ),
                     Flexible(
                       child: Center(
                         child: Text(
                           "Send",
-                          style: Theme.of(context).textTheme.titleLarge,
+                          style: Theme.of(context).textTheme.titleLarge!
+                              .copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff154617),
+                              ),
                         ),
                       ),
                     ),
@@ -49,7 +55,6 @@ class _PaynexSendState extends State<PaynexSend> {
                 ),
               ),
             ),
-            Gap(10),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Container(
@@ -95,7 +100,7 @@ class _PaynexSendState extends State<PaynexSend> {
                 ),
               ),
             ),
-            Gap(10),
+            Gap(15),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: Container(
@@ -106,6 +111,7 @@ class _PaynexSendState extends State<PaynexSend> {
                 ),
                 child: ListTile(
                   leading: CircleAvatar(
+                    radius: 25,
                     backgroundImage: NetworkImage(
                       "https://avatars.githubusercontent.com/u/36250619?v=4",
                     ),
@@ -115,16 +121,24 @@ class _PaynexSendState extends State<PaynexSend> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text("123-456-789"),
-                  trailing: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
+                  trailing: SizedBox(
+                    width: 78,
+                    height: 40,
+                    child: Material(
                       color: Colors.white,
-                    ),
-                    child: Text(
-                      "Edit",
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: Color(0xff154617),
+                      borderRadius: BorderRadius.circular(8),
+                      child: InkWell(
+                        onTap: () {
+                          debugPrint("Send Money");
+                        },
+                        borderRadius: BorderRadius.circular(8),
+                        child: Center(
+                          child: Text(
+                            "Edit",
+                            style: Theme.of(context).textTheme.titleMedium!
+                                .copyWith(color: Color(0xff154617)),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -187,22 +201,27 @@ class _PaynexSendState extends State<PaynexSend> {
                     Padding(
                       padding: EdgeInsets.all(16.0),
                       child: SafeArea(
-                        child: Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(
+                        child: Material(
+                          color: Color(0xffC8F29A),
+                          borderRadius: BorderRadius.circular(20),
+                          child: InkWell(
+                            onTap: () {
+                              debugPrint("Send Money");
+                            },
                             borderRadius: BorderRadius.circular(20),
-                            color: Color(0xffC8F29A),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                "Send Money",
-                                style: Theme.of(context).textTheme.titleMedium!
-                                    .copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: Color(0xff154617),
-                                    ),
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  "Send Money",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xff154617),
+                                      ),
+                                ),
                               ),
                             ),
                           ),

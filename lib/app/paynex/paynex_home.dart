@@ -170,6 +170,7 @@ class _PayhexHomeState extends State<PayhexHome> {
               children: [
                 ListTile(
                   leading: CircleAvatar(
+                    radius: 25,
                     backgroundImage: NetworkImage(
                       "https://avatars.githubusercontent.com/u/36250619?v=4",
                     ),
@@ -184,7 +185,6 @@ class _PayhexHomeState extends State<PayhexHome> {
                     color: Color(0xff154617),
                   ),
                 ),
-                // Gap(10),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
@@ -343,7 +343,6 @@ class _PayhexHomeState extends State<PayhexHome> {
                     ),
                   ),
                 ),
-                Gap(10),
               ],
             ),
           ),
