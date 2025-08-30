@@ -1,3 +1,4 @@
+import 'package:diaria_ui/app/paynex/paynex_request.dart';
 import 'package:diaria_ui/app/paynex/paynex_send.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -180,9 +181,26 @@ class _PayhexHomeState extends State<PayhexHome> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text("ibnuul@gmail.com"),
-                  trailing: Icon(
-                    Icons.notifications_none,
-                    color: Color(0xff154617),
+                  trailing: Material(
+                    borderRadius: BorderRadius.circular(45),
+                    color: Colors.white,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(45),
+                      onTap: () {},
+                      child: SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: Container(
+                          decoration: BoxDecoration(shape: BoxShape.circle),
+                          child: Center(
+                            child: Icon(
+                              Icons.notifications_none,
+                              color: Color(0xff154617),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 Padding(
@@ -281,7 +299,14 @@ class _PayhexHomeState extends State<PayhexHome> {
                                   color: Colors.transparent,
                                   child: InkWell(
                                     borderRadius: BorderRadius.circular(60),
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => PaynexRequest(),
+                                        ),
+                                      );
+                                    },
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
@@ -293,7 +318,7 @@ class _PayhexHomeState extends State<PayhexHome> {
                                             color: Color(0xff154617),
                                           ),
                                           Text(
-                                            "Send",
+                                            "Request",
                                             style: TextStyle(
                                               color: Color(0xff154617),
                                             ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+// Reference : https://ui8.net/orbit-studio-20/products/paynex---finance-mobile-app-ui-kit
+
 class PaynexSend extends StatefulWidget {
   const PaynexSend({super.key});
 
@@ -19,22 +21,31 @@ class _PaynexSendState extends State<PaynexSend> {
             SafeArea(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
+                child: Stack(
+                  alignment: Alignment.center,
                   children: [
-                    Material(
-                      borderRadius: BorderRadius.circular(45),
-                      color: Color(0xffC8F29A),
-                      child: InkWell(
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Material(
                         borderRadius: BorderRadius.circular(45),
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: SizedBox(
-                          width: 45,
-                          height: 45,
-                          child: Container(
-                            decoration: BoxDecoration(shape: BoxShape.circle),
-                            child: Center(child: Icon(Icons.chevron_left)),
+                        color: Color(0xffC8F29A),
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(45),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: SizedBox(
+                            width: 45,
+                            height: 45,
+                            child: Container(
+                              decoration: BoxDecoration(shape: BoxShape.circle),
+                              child: Center(
+                                child: Icon(
+                                  Icons.chevron_left,
+                                  color: Color(0xff154617),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
